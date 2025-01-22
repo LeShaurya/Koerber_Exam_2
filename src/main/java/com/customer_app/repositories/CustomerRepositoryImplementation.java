@@ -18,7 +18,7 @@ public class CustomerRepositoryImplementation implements CustomerRepository{
     }
 
     @Override
-    public List<Customer> getAllCustomers() {
+    public List<Customer> getAllCustomers() throws DAOException{
         List<Customer> customers = new ArrayList<>();
         try {
             Statement statement = connection.createStatement();
@@ -35,7 +35,7 @@ public class CustomerRepositoryImplementation implements CustomerRepository{
     }
 
     @Override
-    public int createCustomer(Customer customer) {
+    public int createCustomer(Customer customer) throws DAOException{
         try {
             String query = "INSERT INTO customer(name, address, phoneNumber) VALUES(?, ?, ?)";
             PreparedStatement preparedStatement = connection.prepareStatement(query, Statement.RETURN_GENERATED_KEYS);
@@ -58,7 +58,7 @@ public class CustomerRepositoryImplementation implements CustomerRepository{
 
 
     @Override
-    public Customer getCustomerById(int id) {
+    public Customer getCustomerById(int id) throws CustomerNotFound, DAOException{
         Customer customer = null;
         try {
             PreparedStatement preparedStatement = connection.prepareStatement("SELECT * FROM customer WHERE id = ?");
