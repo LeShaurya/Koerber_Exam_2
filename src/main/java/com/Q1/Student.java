@@ -1,4 +1,4 @@
-package com.customer_app.Q1;
+package com.Q1;
 
 import java.util.Objects;
 

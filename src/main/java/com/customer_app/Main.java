@@ -9,7 +9,7 @@ public class Main {
         CustomerService customerService = new CustomerServiceImplementation();
         customerService.getAllCustomers().forEach(System.out::println);
 
-        Customer customer = new Customer("name3", "address3", 7777);
+        Customer customer = new Customer("name4", "address4", 676576);
         try {
             int customerAdded = customerService.createCustomer(customer);
             System.out.println(customerAdded + "is the Id");
