@@ -1,4 +1,4 @@
-package com.Q1;
+package com.q1;
 
 import java.util.Comparator;
 import java.util.HashMap;
